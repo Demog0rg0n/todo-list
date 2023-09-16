@@ -88,7 +88,7 @@
 
 .task{
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     font-size: 18px;
     gap: 10px;
     cursor: pointer;
@@ -97,7 +97,7 @@
 }
 
 .fake-checkbox {
-    width: 20px;
+    min-width: 20px;
     height: 20px;
     border-radius: 50%;
     border: 1px solid #000;
