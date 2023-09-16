@@ -1,38 +1,165 @@
-.App {
-  text-align: center;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+.main{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffc965;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.todos{
+    background-color: #FFF;
+    width: 100%;
+    max-width: 600px;
+    max-height: calc(100vh - 50px);
+    padding: 25px;
+}
+.todos__title{
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.todos__content{
+    padding: 10px;
+    border: 1px solid #000;
+    
+}
+.addTask{
+    display: flex;
+    gap: 5px;
+    margin-bottom: 30px;
+}
+.addTask__input{
+    width: 100%;
+    border: 1px solid #000;
+    padding: 10px 20px;
+    font-size: 18px;
+    background: none;
+}
+.addTask__input::placeholder{
+    opacity: 0.5;
+}
+.addTask__input:focus{
+    outline: none;
+}
+.addTask__button{
+    min-width: 43px;
+    height: 43px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    line-height: 20px;
+    cursor: pointer;
+    border: 1px solid #000;
+    background: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+
+.tasks{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 10px;
+    max-height: 320px;
+    overflow: auto;
+}
+.tasks::-webkit-scrollbar{
+    width: 5px;
+}
+.tasks::-webkit-scrollbar-thumb{
+    background-color: #ffc965;
+    border-radius: 10px;
+}
+.tasks::-webkit-scrollbar-track{
+    background-color: #f5f5f5;
+
 }
 
-.App-link {
-  color: #61dafb;
+.task{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    gap: 10px;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #000;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.fake-checkbox {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    transition: .1s linear;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fake-checkbox svg{
+    width: 15px;
+    height: 15px;
+    opacity: 0;
+    transition: .1s linear;
+}
+.completed{
+    opacity: 0.5;
+}
+.completed span{
+    text-decoration: line-through;
+}
+.completed .fake-checkbox svg{
+    opacity: 1;
+}
+
+
+
+
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px solid #000;
+    margin-top: 30px;
+}
+.tasksTypes{
+    display: flex;
+    gap: 10px;
+    list-style: none;
+}
+.tasksType {
+    padding: 5px 10px;
+    line-height: 100%;
+    cursor: pointer;
+}
+.tasksType.active{
+    border: 1px solid #000;
+}
+
+@media (max-width: 620px) {
+    .todos{
+        max-width: calc(100vw - 20px);
+    }
+}
+@media (max-width: 450px) {
+    .footer{
+        flex-direction: column-reverse;
+        gap: 10px;
+        align-items: flex-end;
+    }
+    .tasks-left{
+        margin-right: 10px;
+    }
 }
